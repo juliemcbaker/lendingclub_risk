@@ -36,8 +36,25 @@ found online that said Random Forest models increasingly outperform Logistic Reg
 * LogisticRegression(max_iter=20000) was used to train the model
 
 #### Scores for unscaled logistic regression
-Training Data Score: 0.7094690749863164
-Testing Data Score (from training set): 0.69688013136289
-First Quarter 2020 fit: 0.5546575925138238
+| Score Type           | Score             |
+|----------------------|-------------------|
+|Training Data Score   |0.7094690749863164 |
+|Testing Data Score (from training set) |0.69688013136289 |
+|First Quarter 2020 fit | 0.5546575925138238| 
+
+### Random Forest Classifier Model (unscaled)
+* the model was trained using random_state=7 and n_estimators=500
+
+#### Scores for unscaled random forest classifier
+| Score Type           | Score             |
+|----------------------|-------------------|
+|Training Data Score   |1.0 |
+|Testing Data Score (from training set) |0.7878489326765189 |
+|First Quarter 2020 fit | 0.6461080391322841| 
+
+### Results
+* As predicted, the random forest model outperformed the logistic regression model. 
+* Logistic regression had Training Score: 0.71, Testing Score (from training set): 0.70, and more important First Quarter 2020 fit: 0.55
+* Random forest had Training Score: 1.0, Testing Score (from training set): 0.79, and First Quarter 2020 fit: 0.65
 
 [^1] LendingClub (2019-2020) _Loan Stats_. Retrieved from: [https://resources.lendingclub.com/](https://resources.lendingclub.com/)
