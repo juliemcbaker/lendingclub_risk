@@ -13,9 +13,27 @@ The specific subsets of data used can be found here:
   - 2020 data generated an extra column 'debt_settlement_flag_Y' 
   - this 'debt_settlement_flag_Y' column had perfect covariance with 'debt_settlement_flag_N' which appeared in both years
   - the 'debt_settlement_flag_Y' column was generated for the 2019 data based upon the values in 'debt_settlement_flag_N'
-5. hold
 
-## 
+## Consider the models...
 
+### Which model will perform better: logistic regression or random forests classifier?
+
+* I predict the Random Forest will outperform the Logistic Regression. I'm grounding this in 2 scholarly articles I
+found online that said Random Forest models increasingly outperform Logistic Regression.
+
+* <https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2264-5>
+* <https://scholar.smu.edu/cgi/viewcontent.cgi?article=1041&context=datasciencereview>
+
+## Training unscaled models
+### Logistic regression (unscaled)
+* X variable for 2019 was created by dropping the 'target_high_risk' and 'target_low_risk' columns from the train_convert_df
+* y variable for 2019 was defined as the 'target_high_risk' column from the train_convert_df
+* array shapes were compared to verify compatibility {Shape:  (12180, 92) (12180,)}
+* X_20 variable for 2020 was created by dropping the 'target_high_risk' and 'target_low_risk' columns from the test_convert_df
+* y_20 variable for 2020 was defined as the 'target_high_risk' column from the test_convert_df
+* array shapes were compared to verify compatibility {Shape:  (4702, 92) (4702,)}
+* train_test_split was used to divide the 2019 data into a training & testing subsets
+* LogisticRegression(max_iter=20000) was used to train the model
+* 
 
 [^1] LendingClub (2019-2020) _Loan Stats_. Retrieved from: [https://resources.lendingclub.com/](https://resources.lendingclub.com/)
