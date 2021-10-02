@@ -34,6 +34,10 @@ found online that said Random Forest models increasingly outperform Logistic Reg
 * array shapes were compared to verify compatibility {Shape:  (4702, 92) (4702,)}
 * train_test_split was used to divide the 2019 data into a training & testing subsets
 * LogisticRegression(max_iter=20000) was used to train the model
-* 
+
+#### Scores for unscaled logistic regression
+Training Data Score: 0.7094690749863164
+Testing Data Score (from training set): 0.69688013136289
+First Quarter 2020 fit: 0.5546575925138238
 
 [^1] LendingClub (2019-2020) _Loan Stats_. Retrieved from: [https://resources.lendingclub.com/](https://resources.lendingclub.com/)
