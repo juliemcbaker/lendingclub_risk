@@ -57,4 +57,33 @@ found online that said Random Forest models increasingly outperform Logistic Reg
 * Logistic regression had Training Score: 0.71, Testing Score (from training set): 0.70, and more important First Quarter 2020 fit: 0.55
 * Random forest had Training Score: 1.0, Testing Score (from training set): 0.79, and First Quarter 2020 fit: 0.65
 
+## Revisit Preprocessing: Scale the data
+I predict scaling data will improve both models. With the StandardScaler procedure, scores within each column are converted to z-scores. When each column is converted to z-scores, it puts each column on an even playing field compared to the others such that columns with larger raw values (like income) do not overpower the model compared to other columns that might have smaller raw values, but may still play am important role in predicting loan risk. 
+
+### Logistic regression (scaled)
+#### Scores for scaled logistic regression
+| Score Type           | Score             |
+|----------------------|-------------------|
+|Training Data Score   |0.7139573070607553 |
+|Testing Data Score (from training set) |0.7004926108374384 |
+|First Quarter 2020 fit | 0.753721820501914|
+
+
+### Random forest classifier (scaled)
+#### Scores for scaled random forest classifier
+| Score Type           | Score             |
+|----------------------|-------------------|
+|Training Data Score   |1.0 |
+|Testing Data Score (from training set) |0.7878489326765189 |
+|First Quarter 2020 fit | 0.6452573373032752|
+
+# Wrap-up
+* Scaling data did not improve model fit for the training or 2019 test data. It did, however significantly improve logistic regression model fit for the 2020_Q1 data which jumped from .55 to .75 (which was higher than the model performed on itself). The random forest models performed so similarly that I checked multiple times to make sure I had modified the code to show the correct values.
+
+| data_set	| LogReg_Unscaled	| RandomForest_Unscaled	| LogReg_Scaled	| RandomForest_Scaled|
+|-----------|-----------------|-----------------------|---------------|--------------------|
+|2019_training	| 0.709469	| 1.000000	| 0.713957	| 1.000000 |
+| 2019_test	| 0.696880	| 0.787849	| 0.700493	| 0.787849 |
+| 2020_Q1	| 0.554658	| 0.646108	| 0.753722	| 0.645257 |
+
 [^1] LendingClub (2019-2020) _Loan Stats_. Retrieved from: [https://resources.lendingclub.com/](https://resources.lendingclub.com/)
